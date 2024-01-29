@@ -18,16 +18,46 @@ searchButton.addEventListener('click', function() {
       .then(function (data) {
         console.log(JSON.stringify(data))
        // $("#forecast").text(JSON.stringify(data));
-       var latNumber = data.lat;
+       var latNumber = data[0].lat;
        console.log(latNumber);
-       var lonNumber = data.lon;
+       var lonNumber = data[0].lon;
        console.log(lonNumber);
+       var countryName = data[0].country;
+       console.log(countryName);
+       var stateName = data[0].state;
+       console.log(stateName);
+       
       });
 
-
-
-
+      //------------------------------------------------------------------------------------------------------------
 // api call for today's weather https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+
+
+      var todayURL = https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=90a95552c0fa8f37656e8d048d51f371"
+      fetch(coordsURL)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            console.log(JSON.stringify(data))
+           // $("#forecast").text(JSON.stringify(data));
+           var latNumber = data[0].lat;
+           console.log(latNumber);
+           var lonNumber = data[0].lon;
+           console.log(lonNumber);
+          });
+
+
+
+
+
+
+
+
+
+
+
+
 // api call for 5 day forecast    api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key} 
 //api request by city name        api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key} 
 
